@@ -31,6 +31,6 @@ public class Player_Movement : MonoBehaviour {
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Main.PlayerScore(collision.gameObject); // Player has collected an apple
+        GamePlayManager.PlayerScore(collision.gameObject); // Player has collected an apple
     }
 }
