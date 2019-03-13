@@ -16,24 +16,19 @@ public class GamePlayManager : MonoBehaviour {
     private int playerLifes = 3;
     public Text playerScoreText;
     private static int playerScore = 0;
-    public Text highScoreText;
-    private int highScore = 0;
-    public Text startText;
+    public GameObject highScore;
+    public GameObject manager;
 
     private void Start()
     {
-        Time.timeScale = 0;                 // Game is paused
+        Time.timeScale = 1;                 // Game is paused
     }
     private void Update()
     {
-        if (Input.GetMouseButton(0) == true)
-        {                                   // Game starts when the player clicks
-            Time.timeScale = 1;
-            startText.enabled = false;      // Start text disappears
-        }
         playerScoreText.text = "Score: " + playerScore; // Updates score
         playerLifesText.text = "Lives: " + playerLifes; // Updates lives
     }
+
     private void FixedUpdate()
     {
         if (Random.value <= appleRandomChange)
@@ -57,25 +52,20 @@ public class GamePlayManager : MonoBehaviour {
             }
         }
     }
+
     private void Restart()
     {                                       // Restart Game
-        Time.timeScale = 0;                 // Pause game
-        if (playerScore > highScore)
-        {
-            highScore = playerScore;        // New High Score
-            highScoreText.text = "High Score: " + highScore;
-        }
+        manager.GetComponent<SceneChanger>().ChangeScene("Game Over");
+        highScore.GetComponent<HighScoreManager>().NewHighScore(playerScore);
         for (int i = 0; i < Apples.Count; i++)
         {
             Destroy(Apples[i]);             // Destroy all apple objects
         }
         Apples.Clear();                     // Clear list
-        startText.enabled = true;           // Enable start text
         playerLifes = 3;                    // Reset lives
         playerScore = 0;                    // Reset score
         Player.transform.position = new Vector3(0f, -4f, 0f); // Reset players location
         Tree.transform.position = new Vector3(0f, 3f, 0f); // Reset tree location
-        
     }
 
     public static void PlayerScore(GameObject apple)

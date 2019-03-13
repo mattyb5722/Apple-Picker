@@ -189,7 +189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114783380504766026, guid: 68fd61254ab5a0743a47cf081e6ab619,
+      - m_Target: {fileID: 114432339398805668, guid: 68fd61254ab5a0743a47cf081e6ab619,
           type: 2}
         m_MethodName: ChangeScene
         m_Mode: 5
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114783380504766026, guid: 68fd61254ab5a0743a47cf081e6ab619,
+      - m_Target: {fileID: 114432339398805668, guid: 68fd61254ab5a0743a47cf081e6ab619,
           type: 2}
         m_MethodName: ChangeScene
         m_Mode: 5
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114783380504766026, guid: 68fd61254ab5a0743a47cf081e6ab619,
+      - m_Target: {fileID: 114432339398805668, guid: 68fd61254ab5a0743a47cf081e6ab619,
           type: 2}
         m_MethodName: ChangeScene
         m_Mode: 5
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114783380504766026, guid: 68fd61254ab5a0743a47cf081e6ab619,
+      - m_Target: {fileID: 114432339398805668, guid: 68fd61254ab5a0743a47cf081e6ab619,
           type: 2}
         m_MethodName: ChangeScene
         m_Mode: 5
