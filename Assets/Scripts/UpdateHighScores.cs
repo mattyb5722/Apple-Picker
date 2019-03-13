@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class UpdateHighScores : MonoBehaviour {
 
-    public GameObject highScoresManager;
-
-	private void Start () {
-        List<int> highScores = highScoresManager.GetComponent<HighScoreManager>().HighScores;
-        print("highScores.Count: " + highScores.Count);
-        //Text scores = GetComponentInChildren<Text>();
+	private void Awake () {
+        List<int> highScores = HighScoreManager.instance.getHighScores();
         Text [] scores = GetComponentsInChildren<Text>();
-        for (int i = 1; i <= 10; i++)
+        for (int i = 0; i < 10; i++)
         {
-            print("i: " + i);
-            scores[i].text = "1: " + highScores[i - 1];
+            scores[i].text = i+1+": " + highScores[i];
         }
-        //scores[0].text = "GHGHGH";
     }
 }

@@ -16,8 +16,6 @@ public class GamePlayManager : MonoBehaviour {
     private int playerLifes = 3;
     public Text playerScoreText;
     private static int playerScore = 0;
-    public GameObject highScore;
-    public GameObject manager;
 
     private void Start()
     {
@@ -55,8 +53,10 @@ public class GamePlayManager : MonoBehaviour {
 
     private void Restart()
     {                                       // Restart Game
-        manager.GetComponent<SceneChanger>().ChangeScene("Game Over");
-        highScore.GetComponent<HighScoreManager>().NewHighScore(playerScore);
+
+        SceneChanger.instance.ChangeScene("Game Over");
+        HighScoreManager.instance.NewHighScore(playerScore);
+
         for (int i = 0; i < Apples.Count; i++)
         {
             Destroy(Apples[i]);             // Destroy all apple objects

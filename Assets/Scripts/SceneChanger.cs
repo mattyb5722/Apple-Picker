@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public static SceneChanger instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void ChangeScene(string sceneName)
     {
@@ -19,7 +32,6 @@ public class SceneChanger : MonoBehaviour
         }
         else
         {
-            Debug.Log(sceneName);
             SceneManager.LoadScene(sceneName);
         }
     }
