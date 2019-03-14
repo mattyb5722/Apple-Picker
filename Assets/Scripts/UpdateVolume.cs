@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UpdateVolume : MonoBehaviour {
-	
+	/// <summary>
+    /// Updates UI values for volume
+    /// </summary>
 	// Update is called once per frame
 	void Update () {
-        float backgroundVolume = SFXManager.instance.backgroundVolume;
-        float cacthingVolume = SFXManager.instance.cacthingVolume;
-        Text[] volumeText = GetComponentsInChildren<Text>();
-        //Music Volume:       100 %
+        float backgroundVolume = SFXManager.instance.backgroundVolume; // Music Volume
+        float cacthingVolume = SFXManager.instance.cacthingVolume; // Effect Volume
+        Text[] volumeText = GetComponentsInChildren<Text>(); // UI Text objects
         volumeText[2].text = "Music Volume:       " + (int)(backgroundVolume*100) + "%";
         volumeText[5].text = "Effect Volume:       " + (int)(cacthingVolume*100) + "%";
     }

@@ -342,9 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60cdf191cd03f841baed3242ff8429d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tree: {fileID: 48402867}
-  Player: {fileID: 1655034173}
-  Apple_Sprite: {fileID: 173133385}
+  tree: {fileID: 48402867}
+  player: {fileID: 1655034173}
+  appleSprite: {fileID: 173133385}
   playerLifesText: {fileID: 1473269917}
   playerScoreText: {fileID: 1274314743}
 --- !u!114 &929654590

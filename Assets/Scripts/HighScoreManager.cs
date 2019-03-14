@@ -3,47 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HighScoreManager : MonoBehaviour {
+    /// <summary>
+    /// Manages the high scores
+    /// </summary>
 
-    public static HighScoreManager instance = null;
+    public static HighScoreManager instance = null; // instance of this class
 
-    private List<int> HighScores = new List<int>();
+    private List<int> highScores = new List<int>(); // List of High Scores
 
     public void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // Sets up instance of this class
+        if (instance == null){ instance = this; }
+        else{ Destroy(gameObject); }
+
+        // Create PlayerPrefs for High Scores
         for (int i = 0; i < 10; i++)
         {
-            string title = "High Score: " + i;
+            string title = "High Score: " + i; // Name of the PlayerPref
             if (!PlayerPrefs.HasKey(title))
             {
-                PlayerPrefs.SetInt(title, 0);
+                PlayerPrefs.SetInt(title, 0); // Default Value
             }
-            HighScores.Add(PlayerPrefs.GetInt(title));
+            highScores.Add(PlayerPrefs.GetInt(title));
         }
     }
-
+    // Sets new High Score
     public void NewHighScore(int score)
     {
-        //print(HighScores.Count);
-        for (int i = 0; i < HighScores.Count; i++)
+        for (int i = 0; i < highScores.Count; i++) // Goes through high scores
         {
-            if (score > HighScores[i])
+            if (score > highScores[i]) // Finds where the new score should be 
             {
-                PlayerPrefs.SetInt("High Score: " + i, score);
-                print("New High Score");
+                highScores.Insert(i, score); // Places new high score
+                highScores.RemoveAt(highScores.Count - 1); // Remove lowest high score
                 break;
             }
         }
+        for (int i = 0; i < highScores.Count; i++) // Goes through high scores
+        {
+            PlayerPrefs.SetInt("High Score: " + i, score); // Places new high score
+        }
     }
+    // Gets list of High Scores
     public List<int> getHighScores()
     {
-        return HighScores;
+        return highScores;
     }
 }

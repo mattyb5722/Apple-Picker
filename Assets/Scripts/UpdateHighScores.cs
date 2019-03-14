@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UpdateHighScores : MonoBehaviour {
+    /// <summary>
+    /// Update UI values for high scores
+    /// </summary>
 
-	private void Awake () {
-        List<int> highScores = HighScoreManager.instance.getHighScores();
-        Text [] scores = GetComponentsInChildren<Text>();
+	private void Update () {
+        List<int> highScores = HighScoreManager.instance.getHighScores(); // List of high scores
+        Text [] scores = GetComponentsInChildren<Text>(); // UI Text objects
         for (int i = 0; i < 10; i++)
         {
-            scores[i].text = i+1+": " + highScores[i];
+            scores[i].text = i+1+": " + highScores[i]; // Updates UI text objects
         }
     }
 }

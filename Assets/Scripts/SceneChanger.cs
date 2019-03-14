@@ -5,34 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public static SceneChanger instance = null;
+    /// <summary>
+    /// Changes scenes
+    /// </summary>
+    public static SceneChanger instance = null; // Instance of class
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // Creates instance of class
+        if (instance == null){ instance = this; }
+        else{ Destroy(gameObject); }
     }
-
+    // Changes Scenes
     public void ChangeScene(string sceneName)
     {
-
         if (sceneName == "" || sceneName == null)
         {
             Debug.LogWarning("Empty Scene Name");
         }
-        else if (sceneName == "Quit")
-        {
-            Application.Quit();
-        }
-        else
-        {
-            SceneManager.LoadScene(sceneName);
-        }
+        else if (sceneName == "Quit"){ Application.Quit(); } // Exits Game
+        else { SceneManager.LoadScene(sceneName); } // Loads new Scene
     }
 }
