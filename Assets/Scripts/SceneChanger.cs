@@ -23,7 +23,11 @@ public class SceneChanger : MonoBehaviour
         {
             Debug.LogWarning("Empty Scene Name");
         }
-        else if (sceneName == "Quit"){ Application.Quit(); } // Exits Game
+        else if (sceneName == "Quit")              // Exits Game
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
+        } 
         else { SceneManager.LoadScene(sceneName); } // Loads new Scene
     }
 }
