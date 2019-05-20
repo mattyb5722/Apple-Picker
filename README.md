@@ -8,24 +8,24 @@ collisions between different objects. For a more detailed breakdown of project r
 
 If you are looking to play this game you can. All you have to do is download the whole Runnable folder. Then you can run the Project2.exe file and enjoy the game.
 
-Part A)
+## Part 1 Requirements
 
-Must wait to start until the player presses the mouse button
+ - Must wait to start until the player presses the mouse button
 
-Must have a sprite that automatically moves across the top of the screen without moving out of sight of the camera (i.e., off either side of the screen) and that follows an unpredictable path. This sprite should periodically spawn items that fall towards the bottom of the screen. If an object falls off the screen, the player should lose a life and the object should be destroyed
+ - Must have a sprite that automatically moves across the top of the screen without moving out of sight of the camera (i.e., off either side of the screen) and that follows an unpredictable path. This sprite should periodically spawn items that fall towards the bottom of the screen. If an object falls off the screen, the player should lose a life and the object should be destroyed
 
-Must move an item across the bottom of the screen based on a chosen form of player input (e.g., the player moving their mouse cursor or the player using arrow keys). If a falling object hits the player object, the player should receive points and the falling object should be destroyed
+ - Must move an item across the bottom of the screen based on a chosen form of player input (e.g., the player moving their mouse cursor or the player using arrow keys). If a falling object hits the player object, the player should receive points and the falling object should be destroyed
 
-Must include a UI display that keeps track of how many lives the player has and what their current score is
+ - Must include a UI display that keeps track of how many lives the player has and what their current score is
 
-Must reset the game if the player runs out of lives 
+ - Must reset the game if the player runs out of lives 
 
-Part B)
+## Part 2 Requirements
 
-Must include a UI menu the player can use to change the music and sfx volume, or mute either of them
+ - Must include a UI menu the player can use to change the music and sfx volume, or mute either of them
 
-Must use PlayerPrefs to save and load information from the game. Must be able to save and load the top 10 player high scores whenever they start up the game. Must be able to save and load the player’s sound preferences whenever they start up the game
+ - Must use PlayerPrefs to save and load information from the game. Must be able to save and load the top 10 player high scores whenever they start up the game. Must be able to save and load the player’s sound preferences whenever they start up the game
 
-Must include at least two additional scenes, one before and one after your game scene. The first scene should be a start screen with a menu the player can use to start the game, view the current high scores for the game, or quit the application. The last scene should be a game over screen that displays the high scores and allows the player to either return to the main menu, play again, or quit the application
+ - Must include at least two additional scenes, one before and one after your game scene. The first scene should be a start screen with a menu the player can use to start the game, view the current high scores for the game, or quit the application. The last scene should be a game over screen that displays the high scores and allows the player to either return to the main menu, play again, or quit the application
 
-Must be submitted by giving me a link to a GitHub repository where I can access your game. That repository should include at least 3 commits, 2 branches, and 1 merge in its history. That repository and your project should also be set up appropriately for using Git with Unity 
+ - Must be submitted by giving me a link to a GitHub repository where I can access your game. That repository should include at least 3 commits, 2 branches, and 1 merge in its history. That repository and your project should also be set up appropriately for using Git with Unity 
